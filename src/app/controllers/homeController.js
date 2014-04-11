@@ -1,4 +1,4 @@
 angular.module("testingAngular")
-.controller("homeController", ["$scope", function ($scope){
-	$scope.holaMundo = "Hola Mundo!";
+.controller("homeController", ["$scope", "who", function ($scope, who){
+	$scope.holaMundo = "Hola "+who;
 }]);

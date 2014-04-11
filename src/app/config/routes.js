@@ -6,7 +6,6 @@ angular.module("testingAngular", ["ngRoute"])
 		controller: "homeController"
 	})
 	.otherwise({
-		templateUrl: "app/partials/home.html",
-		controller: "homeController"
+		redirectTo: "/"
 	});
 }]);
