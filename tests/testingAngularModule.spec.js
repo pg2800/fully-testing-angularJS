@@ -7,36 +7,36 @@
 	});
 
 	describe("testing modules", function (){
-		beforeEach(module("testingAngular"));
+		beforeEach(module("testingAngularApp"));
 		var $rootScope;
 		beforeEach(inject(function (_$rootScope_){
 			$rootScope = _$rootScope_;
 		}));
 
-		it("should find the testingAngular module", function (){
+		it("should find the testingAngularApp module", function (){
 			expect($rootScope).not.toBe(undefined);
 		});
 
 		it("should inject the rootScope", function (){
-			expect($rootScope.$id).toBe("002"); // WHY?
+			expect($rootScope.$id).toBe("002");
 		});
 	});
 
-	describe("testing routes' definition", function (){
-		beforeEach(module("testingAngular"));
+	describe("testing routes' definitions", function (){
+		beforeEach(module("testingAngularApp"));
 
 		it('should map routes to controllers', inject(function($route) {
-			expect($route.routes['/'].controller).toBe('homeController');
-			expect($route.routes['/'].templateUrl).toEqual('app/partials/home.html');
+			expect($route.routes['/angular'].controller).toBe('homeController');
+			expect($route.routes['/angular'].templateUrl).toBe('testingAngularApp/partials/home.html');
     	// otherwise redirect to
-    	expect($route.routes[null].redirectTo).toEqual('/');
+    	expect($route.routes[null].redirectTo).toBe('/angular');
     }));
 		
 	});
 
 	describe("Using controllers", function (){
 		var $rootScope;
-		beforeEach(module('testingAngular'));
+		beforeEach(module('testingAngularApp'));
 		beforeEach(inject(function (_$rootScope_){
 			$rootScope = _$rootScope_;
 		}));
@@ -44,11 +44,18 @@
 		it('should be able to access the scope of the homeController', inject(function ($rootScope, $controller){
 			var $scope = $rootScope.$new();
 			$controller("homeController", {
-				$scope: $scope,
-				who: "Mundo!"
+				$scope: $scope
 			});
 			expect($scope.holaMundo).not.toBe(undefined);
+			expect($scope.setWho).not.toBe(undefined);
 			expect($scope.holaMundo).toBe("Hola Mundo!");
+
+			$scope.setWho();
+			expect($scope.holaMundo).toBe("Hola tu..");
+
+			$scope.setWho("Pablo..!");
+			expect($scope.holaMundo).toBe("Hola Pablo..!");
+
 		}));
 	});
 
