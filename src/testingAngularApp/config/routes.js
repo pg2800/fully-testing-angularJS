@@ -1,4 +1,4 @@
-angular.module("testingAngularApp", ["ngRoute", "mongoDBService"])
+angular.module("testingAngularApp", ["ngRoute", "mongoDBService", "Filters"])
 .config(["$routeProvider", function ($routeProvider){
 	$routeProvider
 	.when("/angular", {

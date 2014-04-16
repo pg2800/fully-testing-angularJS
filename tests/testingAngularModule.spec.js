@@ -41,7 +41,7 @@
 		it("should");
 	});
 
-	describe("testing routes' definitions", function (){
+	describe("Routes", function (){
 		beforeEach(module("testingAngularApp"));
 
 		it('should map routes to controllers', inject(function ($route) {
@@ -63,14 +63,14 @@
 		
 	});
 
-	describe("Using controllers", function (){
+	describe("Home Controller", function (){
 		var $rootScope;
 		beforeEach(module('testingAngularApp'));
 		beforeEach(inject(function (_$rootScope_){
 			$rootScope = _$rootScope_;
 		}));
 
-		it('should be able to access the scope of the homeController', inject(function ($controller){
+		it('should be able to access the scope', inject(function ($controller){
 			var $scope = $rootScope.$new();
 			$controller("homeController", {
 				$scope: $scope
@@ -85,6 +85,10 @@
 			$scope.setWho("Pablo..!");
 			expect($scope.holaMundo).toBe("Hola Pablo..!");
 		}));
+
+		it("", function() {
+			
+		});
 	});
 
 
