@@ -39,9 +39,9 @@
 		</nav>
 		<header></header>
 		<div>
-			<section data-ng-view>
-
-			</section>
+			<div class="container">
+				<section data-ng-view> </section>
+			</div>
 		</div>
 		<article></article>
 		<footer></footer>
@@ -50,12 +50,16 @@
 	<!-- Bootstrap --> <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<!-- AngularJS --> <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<!-- AngularJS ngRoute --> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-route.min.js"></script>
+	<!-- AngularJS Resource --> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-resource.min.js"></script>
 
 	<!-- testingAngularApp -->
+	<!-- Dependency Modules -->
+	<script type="text/javascript" src="testingAngularApp/services/mongoDBService.js"></script>
 	<!-- Routes -->
 	<script type="text/javascript" src="testingAngularApp/config/routes.js"></script>
 	<!-- Controllers -->
 	<script type="text/javascript" src="testingAngularApp/controllers/homeController.js"></script>
+	<script type="text/javascript" src="testingAngularApp/controllers/mongoController.js"></script>
 
 </body>
 </html>

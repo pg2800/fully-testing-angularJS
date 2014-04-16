@@ -1,4 +1,4 @@
-angular.module("testingAngularApp", ["ngRoute"])
+angular.module("testingAngularApp", ["ngRoute", "mongoDBService"])
 .config(["$routeProvider", function ($routeProvider){
 	$routeProvider
 	.when("/angular", {
@@ -6,8 +6,12 @@ angular.module("testingAngularApp", ["ngRoute"])
 		controller: "homeController"
 	})
 	.when("/mongo", {
-		templateUrl: "",
-		controller: ""
+		templateUrl: "testingAngularApp/partials/mongo.html",
+		controller: "mongoController"
+	})
+	.when("/filter", {
+		templateUrl: "testingAngularApp/partials/filter.html",
+		controller: "randomFilterController"
 	})
 	.otherwise({
 		redirectTo: "/angular"
