@@ -1,8 +1,16 @@
-<div class="form-group">
-	<input type="text" class="form-control" id="exampleInput" placeholder="Write Something" name="exampleInput" data-ng-model="who">
-	<br />
-	<button ng-click="add(who)" class="btn btn-default">Pííícameee!</button>	
+<div class="row">
+	<div class="col-sm-4">
+		<div class="form-group">
+			<input type="number" class="form-control" id="exampleInput" placeholder="Write a Number" name="exampleInput" data-ng-model="who">
+			<br />
+			<button ng-click="add(who)" class="btn btn-default">Pííícameee!</button>	
+		</div>
+		<div class="list-group text-center">
+			<a href="" class="list-group-item" ng-repeat="item in items">
+				<!-- <h4 class="list-group-item-heading" ng-bind="item.n"></h4> -->
+				<p class="list-group-item-text" ng-bind="item.n">...</p>
+			</a>
+		</div>
+	</div>
+	<div class="col-sm-8"></div>
 </div>
-<ul>
-	<li ng-repeat="item in items" ng-bind="item"></li>
-</ul>

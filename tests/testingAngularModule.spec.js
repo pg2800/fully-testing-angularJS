@@ -1,6 +1,6 @@
 (function(){
 
-	describe("initial angular mock objects test", function (){
+	describe("initial angular mock objects", function (){
 		it("should find the mock variable 'module' of the global scope", function (){
 			expect(window.module).toBeDefined();
 		});
@@ -85,10 +85,12 @@
 			$scope.setWho("Pablo..!");
 			expect($scope.holaMundo).toBe("Hola Pablo..!");
 		}));
+	});
 
-		it("", function() {
+	describe("Mongo Controller", function() {
+		beforeEach(inject(function(_$rootScope_) {
 			
-		});
+		}));
 	});
 
 

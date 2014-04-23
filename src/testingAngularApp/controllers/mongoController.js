@@ -1,8 +1,7 @@
 angular.module("testingAngularApp")
 .controller("mongoController", ["$scope", "User", function ($scope, User){
-	$scope.testing = "Hola Mundo!";
-	$scope.users = [];
-	var id;
+	var id; $scope.users = [];
+
 	User.query({}, function (users){
 		$scope.users = users;
 		var last = $scope.users[$scope.users.length-1];
@@ -25,6 +24,5 @@ angular.module("testingAngularApp")
 		});
 		$scope.users = [];
 	}
-
 
 }]);

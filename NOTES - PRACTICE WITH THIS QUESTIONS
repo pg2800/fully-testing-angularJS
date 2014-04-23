@@ -1,0 +1,25 @@
+Test the select with the ng-options 
+1. Test the group by.. Because they don't do any code at all..
+2. Test the ng-selected when using the ng-options because it uses the ng-model to select the default option but it might work with the ng-selected like:
+
+controller:
+$scope.items = [{},{},...];
+$scope.selected=$scope.items[0];
+
+partial:
+<select ng-model="selected" ng-options="value as label for (value, label) in items" />
+
+why not:
+<select ng-selected="$scope.items[0]" ng-options="value as label for (value, label) in items" />
+or maybe add in the controller $scope.selectedItems = [{},{}] or something like that.
+<select ng-selected="$scope.selectedItems" ng-options="value as label for (value, label) in items" MULTIPLE />
+<select ng-model="$scope.selectedItems" ng-options="value as label for (value, label) in items" MULTIPLE />
+
+3. What happens if I add ng-required
+4. Test the ng-multiple.. see if it is fully developed rightnow.
+
+
+5. Leer lo de providers otra vez
+6. Ver lo de un provider centralizado que pueda manejar las rutas del proyecto sin duplicar código como lo de crudRouteProvider en el cap 6 en la última sección.
+7. Releer Promises
+8. Clear template cache service of angularJS

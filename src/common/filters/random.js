@@ -1,6 +1,6 @@
 angular.module("Filters", [])
 .filter("random", function (){
-  // The Fisher–Yates shuffle
+  // The Fisher–Yates (Ronald Fisher and Frank Yates) shuffle. -> aka. The Knuth Shuffle
 	function shuffle(array) {
 		var m = array.length, t, i;
   	// While there remain elements to shuffle…

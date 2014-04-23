@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>Security with AngularJS</title>
+    <link rel='stylesheet' href='bootstrap.css'>
+    <script src='angular.js'></script>
+    <script src='angular-route.js'></script>
+    <script src='login/toolbar.js'></script>
+    <script src='login/localizedMessages.js'></script>
+    <script src='login/LoginFormController.js'></script>
+    <script src='login/login.js'></script>
+    <script src='retryQueue.js'></script>
+    <script src='interceptor.js'></script>
+    <script src='security.js'></script>
+    <script src='authorization.js'></script>
+    <script src='ui-bootstrap.js'></script>
+    <script src='index.js'></script>
+    <style>
+        #menu li{
+            display: inline-block;
+        }
+        #menu li:after {
+            content: " |";
+        }
+    </style>
+</head>
+<body ng-app='security' ng-controller='main'>
+<login-toolbar></login-toolbar>
+
+<ul id='menu'>
+    <li><a href='#/home'>Home</a></li>
+    <li><a href='#/test'>non restricted URL</a></li>
+    <li><a href='#/admin'>Admin</a></li>
+</ul>
+<div ng-view></div>
+
+</body>
+</html>
