@@ -1,4 +1,4 @@
-angular.module("testingAngularApp", ["ngRoute", "mongoDBService", "Filters"])
+angular.module("testingAngularApp", ["ngRoute", "ngSanitize", "mongoDBService", "Filters", "CustomDirectives"])
 .config(["$routeProvider", function ($routeProvider){
 	$routeProvider
 	.when("/angular", {
@@ -12,6 +12,12 @@ angular.module("testingAngularApp", ["ngRoute", "mongoDBService", "Filters"])
 	.when("/filter", {
 		templateUrl: "testingAngularApp/partials/filter.html",
 		controller: "randomFilterController"
+	})
+	.when("/customDirectives", {
+		templateUrl: "testingAngularApp/partials/customDirectives.tpl.html"
+	})
+	.when("/pagination", {
+		templateUrl: "testingAngularApp/partials/pagination.tpl.html"
 	})
 	.otherwise({
 		redirectTo: "/angular"

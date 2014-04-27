@@ -1,0 +1,19 @@
+<br />
+<br />
+<p class="lead">
+	The Directive's Compile phase is executed once each time it encounters a directive.
+</p>
+<br />
+<br />
+<button size="lg" data-role="default" data-cd:code="test1:inScope">Large Button</button>&nbsp;
+<span>{{test1}}</span>
+<br	/>
+<br	/>
+<button size="sm" data-role="success" data-cd:code="test2:inParent">Small Button</button>&nbsp;
+<span>{{test2.start | html}}</span>
+<span>{{test2.finish | JavaScript}}</span>
+<br />
+<br />
+
+<!-- Hacer que la variable sea un objecto que contenga el elemento antes de la modificación de las directivas {start:..., finish:...} -->
+<!-- También, hacer o buscar filtros para desplegar el codigo de manera correcta en diferentes lenguajes como JavaScript, HTML, CoffeeScript -->

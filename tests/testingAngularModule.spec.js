@@ -7,18 +7,23 @@
 	});
 
 	describe("testingAngularApp module", function (){
+		it("should find the testingAngularApp module", function() {
+			var $injector = angular.injector(["testingAngularApp"]);
+			expect($injector).not.toBeUndefined();
+		});
+
 		beforeEach(module("testingAngularApp"));
 		var $rootScope;
 		beforeEach(inject(function (_$rootScope_){
 			$rootScope = _$rootScope_;
 		}));
 
-		it("should find the testingAngularApp module", function (){
+		it("should have a rootScope", function (){
 			expect($rootScope).toBeDefined();
 		});
 
 		it("should inject the rootScope", function (){
-			expect($rootScope.$id).toBe("002");
+			expect($rootScope.$id).toBeDefined();
 		});
 
 		// it("should find that users is an array", inject(function ($controller){
@@ -29,7 +34,7 @@
 		// 	});
 		// 	expect($scope.users).toBe([]);
 		// }));
-	});
+});
 
 	describe("testing mongoDB module", function() {
 		beforeEach(module("mongoDBService"));
@@ -63,35 +68,35 @@
 		
 	});
 
-	describe("Home Controller", function (){
-		var $rootScope;
-		beforeEach(module('testingAngularApp'));
-		beforeEach(inject(function (_$rootScope_){
-			$rootScope = _$rootScope_;
-		}));
+describe("Home Controller", function (){
+	var $rootScope;
+	beforeEach(module('testingAngularApp'));
+	beforeEach(inject(function (_$rootScope_){
+		$rootScope = _$rootScope_;
+	}));
 
-		it('should be able to access the scope', inject(function ($controller){
-			var $scope = $rootScope.$new();
-			$controller("homeController", {
-				$scope: $scope
-			});
-			expect($scope.holaMundo).toBeDefined();
-			expect($scope.setWho).toBeDefined();
-			expect($scope.holaMundo).toBe("Hola Mundo!");
+	it('should be able to access the scope', inject(function ($controller){
+		var $scope = $rootScope.$new();
+		$controller("homeController", {
+			$scope: $scope
+		});
+		expect($scope.holaMundo).toBeDefined();
+		expect($scope.setWho).toBeDefined();
+		expect($scope.holaMundo).toBe("Hola Mundo!");
 
-			$scope.setWho();
-			expect($scope.holaMundo).toBe("Hola tu..");
+		$scope.setWho();
+		expect($scope.holaMundo).toBe("Hola tu..");
 
-			$scope.setWho("Pablo..!");
-			expect($scope.holaMundo).toBe("Hola Pablo..!");
-		}));
-	});
+		$scope.setWho("Pablo..!");
+		expect($scope.holaMundo).toBe("Hola Pablo..!");
+	}));
+});
 
-	describe("Mongo Controller", function() {
-		beforeEach(inject(function(_$rootScope_) {
-			
-		}));
-	});
+describe("Mongo Controller", function() {
+	beforeEach(inject(function(_$rootScope_) {
+
+	}));
+});
 
 
 })();

@@ -18,21 +18,36 @@
   <!-- AngularJS ngRoute --> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-route.min.js"></script>
   <!-- AngularJS Mocks--> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-mocks.js"></script>
   <!-- AngularJS Resource --> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-resource.min.js"></script>
-
+  <!-- AngularJS :: Sanitize Module --> <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular-sanitize.min.js"></script>
 
   <!-- include source files here... -->
+  <script type="text/javascript" src="../src/common/customDirectives/directives.js"></script>
+  <script type="text/javascript" src="../src/common/filters/random.js"></script>
   <script type="text/javascript" src="../src/testingAngularApp/services/mongoDBService.js"></script>
   <script type="text/javascript" src="../src/testingAngularApp/config/routes.js"></script>
   <script type="text/javascript" src="../src/testingAngularApp/controllers/mongoController.js"></script>
   <script type="text/javascript" src="../src/testingAngularApp/controllers/homeController.js"></script>
   <script type="text/javascript" src="../src/testingAngularApp/controllers/randomFilterController.js"></script>
-  <script type="text/javascript" src="../src/common/filters/random.js"></script>
+  
 
   <!-- include spec files here... -->
   <script type="text/javascript" src="testingAngularModule.spec.js"></script>
+  <script type="text/javascript" src="customDirectives.spec.js"></script>
 
 
 
+  <!-- Jasmine Shortcuts -->
+  <script type="text/javascript">
+    $(document).ready(function (){
+      $(document).on("keyup", function (e){
+        // console.log(e.keyCode);
+        // console.log($("span.bar.skipped").children());
+        if(e.keyCode == 83)  $(".spec-list-menu").trigger("click");
+        if(e.keyCode == 65)  $("span.bar.skipped").children().trigger("click");
+        if(e.keyCode == 70)  $(".failures-menu").trigger("click");
+      });
+    });
+  </script>
 
 </head>
 

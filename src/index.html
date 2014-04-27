@@ -34,6 +34,8 @@
 						<li class="{{navbar.links.angular}}"><a href="#/angular">Angular</a></li>
 						<li class="{{navbar.links.links}}"><a href="#/mongo">MongoDb</a></li>
 						<li class="{{navbar.links}}"><a href="#/filter">Filter</a></li>
+						<li class="{{navbar.links}}"><a href="#/customDirectives">Custom Directives</a></li>
+						<li class="{{navbar.links}}"><a href="#/pagination">Pagination</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
@@ -52,8 +54,16 @@
 	<!-- AngularJS --> <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<!-- AngularJS ngRoute --> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-route.min.js"></script>
 	<!-- AngularJS Resource --> <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0rc3/angular-resource.min.js"></script>
+	<!-- AngularJS :: Sanitize Module --> <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular-sanitize.min.js"></script>
+	
+	
+	
 
 	<!-- testingAngularApp -->
+	<!-- Filters -->
+	<script type="text/javascript" src="common/filters/random.js"></script>
+	<!-- Directives -->
+	<script type="text/javascript" src="common/customDirectives/directives.js"></script>
 	<!-- Dependency Modules -->
 	<script type="text/javascript" src="testingAngularApp/services/mongoDBService.js"></script>
 	<!-- Routes -->
@@ -62,9 +72,6 @@
 	<script type="text/javascript" src="testingAngularApp/controllers/homeController.js"></script>
 	<script type="text/javascript" src="testingAngularApp/controllers/mongoController.js"></script>
 	<script type="text/javascript" src="testingAngularApp/controllers/randomFilterController.js"></script>
-	<!-- Filters -->
-	<script type="text/javascript" src="common/filters/random.js"></script>
-
 
 </body>
 </html>
